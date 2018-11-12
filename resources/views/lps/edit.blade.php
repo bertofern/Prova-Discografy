@@ -6,7 +6,7 @@
     {!! Form::open(['action' => ['LpsController@update', $lp->id], 'method' => 'POST']) !!}
         <div class="form-group">
             {{Form::label('artist_id', 'Artist_id')}}
-            {{Form::text('artist_id', $lp->artist_id, ['class' => 'form-control','placeholder' => 'Artist_id'])}}
+            {{Form::text('artist_id', $lp->artist_id, ['class' => 'form-control', 'readonly','placeholder' => 'Artist_id'])}}
         </div>  
         <div class="form-group">
             {{Form::label('name', 'Name')}}

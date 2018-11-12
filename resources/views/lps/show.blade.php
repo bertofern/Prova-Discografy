@@ -3,7 +3,7 @@
 @section('content')
 
     <a href="/Lps" class="btn btn-default">go back</a>
-    <h1>{{$lp->artist_id}}</h1>
+    <h1>{{$artist->name}}</h1>
     <h1>{{$lp->name}}</h1>
     <p>{{$lp->description}}</p>
     <hr>

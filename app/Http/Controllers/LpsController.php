@@ -20,7 +20,8 @@ class LpsController extends Controller
         /*$lps=Lps::orderBy('id','DESC')->get();*/
         /*$lps=DB::select('SELECT * FROM Lps');*/
         $lps=Lps::all();
-        return view('Lps.index')->with('lps', $lps); 
+        $artists=Artists::all();
+        return view('Lps.index')->with(['lps'=> $lps, 'artists'=> $artists]); 
     }
 
     /**
@@ -45,7 +46,7 @@ class LpsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            //'artist_id'=>'required',
+            'artist_id'=>'required',
             'name'=>'required',
             'description'=>'required'
         ]);
@@ -70,7 +71,8 @@ class LpsController extends Controller
     public function show($id)
     {
         $lp=Lps::find($id);
-        return view('Lps.show')->with('lp', $lp);
+        $artist=Artists::find($lp->artist_id);
+        return view('Lps.show')->with(['lp'=> $lp, 'artist' => $artist]);
     }
 
     /**
