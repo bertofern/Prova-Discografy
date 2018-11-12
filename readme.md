@@ -1,3 +1,5 @@
+<a href="https://bertofern.wordpress.com/2018/10/30/crear-un-proyecto-laravel-con-composer/">Documentación de la Instalación</a>
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
