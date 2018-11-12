@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-11-2018 a las 07:58:42
+-- Tiempo de generación: 12-11-2018 a las 19:10:48
 -- Versión del servidor: 10.1.36-MariaDB
 -- Versión de PHP: 7.2.11
 
@@ -65,7 +65,7 @@ CREATE TABLE `lps` (
 --
 
 INSERT INTO `lps` (`id`, `artist_id`, `name`, `description`) VALUES
-(1, 1, 'sfe', 'sgr');
+(1, 1, 'Lp 1', 'Description + Updated');
 
 -- --------------------------------------------------------
 

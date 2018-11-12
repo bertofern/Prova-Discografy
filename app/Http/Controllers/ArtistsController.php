@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Artists;
+use App\Lps;
 
 class ArtistsController extends Controller
 {
@@ -64,7 +65,8 @@ class ArtistsController extends Controller
     public function show($id)
     {
         $artist=Artists::find($id);
-        return view('Artists.show')->with('artist', $artist);
+        $lps=Lps::where('artist_id', $artist->id)->get();
+        return view('Artists.show')->with(['artist' => $artist, 'lps' => $lps]);
     }
 
     /**

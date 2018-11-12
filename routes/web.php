@@ -20,4 +20,23 @@ Route::resource('Lps', 'LpsController');
 
 /*Route::get('/Artists', function () {
     return view('Artists.index');
+});
+
+Route::get('Lps/create/{id}', function () {
+    return view('Lps.create');
+});
+
+Route::get('/Lps/create/{id}', 'LpsController@create');
+
+Route::get('/Lps/create/{id}', function () {
+    return view('Lps.create');
 });*/
+
+Route::get('/Lps/create/{id}', [
+    'as' => 'Lps',
+    'uses' => 'LpsController@create',
+    function () {
+        return view('Lps.create');
+    }
+]);
+

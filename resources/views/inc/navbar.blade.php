@@ -21,7 +21,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="/Artists/create">Create Artists</a></li>
-                <li><a href="/Lps/create">Create Lps</a></li>
+                <!--<li><a href="/Lps/create">Create Lps</a></li>-->
             </ul>
         </div>
     </div>

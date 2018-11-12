@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Lps;
+use App\Artists;
 
 class LpsController extends Controller
 {
@@ -27,9 +28,12 @@ class LpsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        return view('Lps.create');
+        // For Artists
+        $artist=Artists::find($id);
+        //$artist=Artists::where('id', $id)->get();
+        return view('Lps.create')->with('artist', $artist);
     }
 
     /**
@@ -41,7 +45,7 @@ class LpsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'artist_id'=>'required',
+            //'artist_id'=>'required',
             'name'=>'required',
             'description'=>'required'
         ]);
