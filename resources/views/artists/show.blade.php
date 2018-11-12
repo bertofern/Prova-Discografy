@@ -6,7 +6,7 @@
     <h1>{{$artist->name}}</h1>
     <p>{{$artist->description}}</p>
 
-    <h1>Lps of {{$artist->name}}</h1>
+    <h1>{{$count}} Lps of {{$artist->name}}</h1>
     @if(count($lps)>0)
         @foreach ($lps as $lp)
         <div class="well">

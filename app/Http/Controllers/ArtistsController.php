@@ -66,7 +66,8 @@ class ArtistsController extends Controller
     {
         $artist=Artists::find($id);
         $lps=Lps::where('artist_id', $artist->id)->get();
-        return view('Artists.show')->with(['artist' => $artist, 'lps' => $lps]);
+        $count=Lps::where('artist_id', $artist->id)->count();
+        return view('Artists.show')->with(['artist' => $artist, 'lps' => $lps, 'count' => $count]);
     }
 
     /**
