@@ -1,25 +1,19 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>Discography Test</title>
+@section('content')
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="{{asset('css/app.css')}}">
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1 class="jumbotron-heading">Welcome to Laravel Test</h1>
+        <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
+        <!-- Authentication Links -->
+        @guest
+        <a href="{{ route('login') }}" class="btn btn-primary my-2">Login</a>
+        <a href="{{ route('register') }}" class="btn btn-secondary my-2">Register</a>
+        @else
+        <p>Your Welcome {{ Auth::user()->name }}</p>
+        @endguest
+    </div>
+</section>
 
-    </head>
-    <body>
-        @include('inc.navbar')
-        @include('inc.messages')
-        @yield('content')
-
-        <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
-        <script>
-            CKEDITOR.replace( 'article-ckeditor' );
-        </script>
-    </body>
-</html>
+@endsection

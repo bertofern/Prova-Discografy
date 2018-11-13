@@ -11,6 +11,9 @@
 |
 */
 
+/*Route::get('/', function () {
+    return view('layouts.app');
+});*/
 Route::get('/', function () {
     return view('welcome');
 });
@@ -40,3 +43,7 @@ Route::get('/Lps/create/{id}', [
     }
 ]);
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
